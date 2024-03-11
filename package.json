@@ -1,0 +1,47 @@
+{
+  "name": "testcafe-browser-provider-selenium-repro-screenshot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "test.tc.ts",
+  "scripts": {
+    "browsertools:chrome": "testcafe chrome test.tc.ts",
+    "browsertools:chrome#headless": "testcafe chrome:headless test.tc.ts",
+    "browsertools:firefox": "testcafe firefox test.tc.ts",
+    "browsertools:firefox#headless": "testcafe firefox:headless test.tc.ts",
+    "browsertools:oldchrome": "testcafe \"chrome:./chrome/win64-113.0.5672.63/chrome-win64/chrome.exe\" test.tc.ts",
+    "browsertools:oldchrome#headless": "testcafe \"chrome:./chrome/win64-113.0.5672.63/chrome-win64/chrome.exe:headless\" test.tc.ts",
+    "browsertools:safari": "testcafe safari test.tc.ts",
+    
+    "macos:safari": "cross-env SELENIUM_SERVER=$npm_package_config_testcafe_browser_provider_selenium_repro_screenshot_macos_server testcafe selenium:safari test.tc.ts",
+    "macos:safari#headless": "echo THERE IS NO HEADLESS SAFARI!: https://discussions.apple.com/thread/251837694?sortBy=best",
+    "macos:chrome": "cross-env SELENIUM_SERVER=$npm_package_config_testcafe_browser_provider_selenium_repro_screenshot_macos_server testcafe selenium:chrome test.tc.ts",
+    "macos:chrome#headless": "cross-env SELENIUM_SERVER=$npm_package_config_testcafe_browser_provider_selenium_repro_screenshot_macos_server testcafe selenium:chrome#headless test.tc.ts",
+    
+    "windows:chrome": "cross-env SELENIUM_SERVER=$npm_package_config_testcafe_browser_provider_selenium_repro_screenshot_windows_server testcafe selenium:chrome test.tc.ts",
+    "windows:chrome#headless": "cross-env SELENIUM_SERVER=$npm_package_config_testcafe_browser_provider_selenium_repro_screenshot_windows_server testcafe selenium:chrome#headless test.tc.ts",
+    "windows:oldchrome": "cross-env SELENIUM_SERVER=$npm_package_config_testcafe_browser_provider_selenium_repro_screenshot_windows_server testcafe selenium:chrome@113 test.tc.ts",
+    "windows:oldchrome#headless": "cross-env SELENIUM_SERVER=$npm_package_config_testcafe_browser_provider_selenium_repro_screenshot_windows_server testcafe selenium:chrome@113#headless test.tc.ts",
+    "windows:firefox": "cross-env SELENIUM_SERVER=$npm_package_config_testcafe_browser_provider_selenium_repro_screenshot_windows_server testcafe selenium:firefox test.tc.ts",
+    "windows:firefox#headless": "cross-env SELENIUM_SERVER=$npm_package_config_testcafe_browser_provider_selenium_repro_screenshot_windows_server testcafe selenium:firefox#headless test.tc.ts",
+    
+    "install:oldchrome": "npx @puppeteer/browsers install chrome@113"
+  },
+  "config": {
+    "testcafe_browser_provider_selenium_repro_screenshot": {
+      "windows_server": "http://localhost:4444/wd/hub",
+      "macos_server": "http://localhost:4444/wd/hub"
+    }
+  },
+  "repository": {},
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@types/pngjs": "^6.0.4",
+    "cross-env": "^7.0.3",
+    "pngjs": "^7.0.0",
+    "testcafe": "^3.5.0",
+    "testcafe-browser-provider-selenium": "^1.2.0"
+  },
+  "devDependencies": {
+  }
+}
